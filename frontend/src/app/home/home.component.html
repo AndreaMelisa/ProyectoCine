@@ -1,0 +1,66 @@
+<header class="bg-light text-white py-1 shadow-sm">
+  <div class="container d-flex justify-content-between align-items-center">
+
+    <div class="flex-grow-1 text-center">
+      <img src="assets/slider/logo.png" alt="Cinemanía Logo" style="height: 100px;">
+    </div>
+
+    <nav class="d-flex align-items-center">
+      <a class="text-success fs-3 me-4" href="#"><i class="fas fa-user"></i></a>
+      <a class="text-success fs-3 me-4" href="#"><i class="fas fa-shopping-cart"></i></a>
+      <a class="text-success fs-3" href="#"><i class="fas fa-search"></i></a>
+    </nav>
+  </div>
+</header>
+
+
+<!-- SLIDER -->
+<div id="carouselHome" class="carousel slide mb-5" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div
+      class="carousel-item"
+      *ngFor="let slide of sliders; let i = index"
+      [class.active]="i === 0">
+      <img [src]="'assets/slider/' + slide" class="d-block w-100" [alt]="'Slider ' + (i+1)">
+    </div>
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselHome" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselHome" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+
+<!-- PELÍCULAS EN CARTAS -->
+<div class="container mb-5">
+  <h2 class="mb-4 text-secondary">Películas en cartelera</h2>
+  <div class="row row-cols-1 row-cols-md-4 g-4" *ngIf="peliculas.length > 0">
+    <div class="col" *ngFor="let pelicula of peliculas">
+      <div class="card h-100 shadow-sm">
+        <img [src]="'assets/peliculas/' + pelicula.imagen" class="card-img-top" [alt]="pelicula.titulo">
+        <div class="card-body">
+          <h5 class="card-title">{{pelicula.titulo}}</h5>
+          <p class="card-text">{{pelicula.genero}} | Duración: {{pelicula.duracion}} min</p>
+          <button class="btn btn-success w-100" [routerLink]="'/funciones/' + pelicula.id">
+            Ver funciones
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="bg-light py-4 border-top">
+  <div class="container d-flex justify-content-between align-items-center">
+    <p class="mb-0 text-secondary">© 2025 CINEMANÍA</p>
+    <div>
+      <a href="#" class="text-success me-3"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="text-success me-3"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="text-success"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+</footer>

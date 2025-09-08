@@ -1,0 +1,16 @@
+.carousel-inner img {
+  height: 600px;
+  object-fit: cover;
+}
+
+.card-title {
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 0.9rem;
+}
+
+footer a:hover {
+  color: #0056b3;
+}
