@@ -28,7 +28,6 @@ public class SalaController {
         return SalaService.crearSala(sala);
     }
 
-    // Obtener una sala por ID
     @GetMapping("/{id}")
     public Sala obtenerSalaPorId(@PathVariable Long id) {
         Optional<Sala> sala = SalaService.obtenerSalaPorId(id);
