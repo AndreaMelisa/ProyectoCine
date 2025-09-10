@@ -16,13 +16,11 @@ public class SalaController {
     @Autowired
     private SalaService SalaService;
 
-    // Listar todas las salas
     @GetMapping
     public List<Sala> listarSalas() {
         return SalaService.listarSalas();
     }
 
-    // Crear una nueva sala
     @PostMapping
     public Sala crearSala(@RequestBody Sala sala) {
         return SalaService.crearSala(sala);
@@ -34,13 +32,11 @@ public class SalaController {
         return sala.orElse(null);
     }
 
-    // Actualizar una sala existente
     @PutMapping("/{id}")
     public Sala actualizarSala(@PathVariable Long id, @RequestBody Sala detallesSala) {
         return SalaService.actualizarSala(id, detallesSala);
     }
 
-    // Eliminar una sala
     @DeleteMapping("/{id}")
     public void eliminarSala(@PathVariable Long id) {
         SalaService.eliminarSala(id);
