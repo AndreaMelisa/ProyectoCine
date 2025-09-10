@@ -31,8 +31,8 @@ public class Pelicula {
     public int getDuracion() { return duracion; }
     public void setDuracion(int duracion) { this.duracion = duracion; }
 
-    public String getImagen() { return imagen; } // <- GETTER
-    public void setImagen(String imagen) { this.imagen = imagen; } // <- SETTER
+    public String getImagen() { return imagen; } // <- 
+    public void setImagen(String imagen) { this.imagen = imagen; } // <- 
 
     public List<Funcion> getFunciones() { return funciones; }
     public void setFunciones(List<Funcion> funciones) { this.funciones = funciones; }
